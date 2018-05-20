@@ -1,6 +1,5 @@
 import React from 'react'
-import { Panel, Row, Col } from 'react-bootstrap'
-import styled from 'styled-components'
+import { Row, Col } from 'react-bootstrap'
 import PageSubTitle from '../shared/styled/PageSubTitle'
 import MembershipCard from './MembershipCard'
 
@@ -31,8 +30,8 @@ export default props => {
           <MembershipCard title="Nike" {...props}>
             <ul>
               <li>
-                Gets a discount on Premium Ads when 4 or more** are purchased.
-                The price drops to $379.99 per ad
+                Gets a discount on Premium Ads when 4 or more are purchased. The
+                price drops to $379.99 per ad
               </li>
             </ul>
           </MembershipCard>

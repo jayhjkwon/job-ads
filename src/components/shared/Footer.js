@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export default () => {
   return (
     <FooterContainer>
-      <FooterText>{new Date().getFullYear()} SEEK.</FooterText>
+      <FooterText>{new Date().getFullYear()} My Job Dashboard.</FooterText>
     </FooterContainer>
   )
 }

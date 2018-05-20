@@ -45,6 +45,10 @@ injectGlobal`
 	}
 
 	@media (max-width: 650px) {
+		ol.progtrckr li {
+			width: auto;
+		}
+
 		.progtrckr li span {
 			display: none;
 		}

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Panel, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap'
-import styled from 'styled-components'
+import { Row, Col, ListGroup } from 'react-bootstrap'
 import PageSubTitle from '../shared/styled/PageSubTitle'
 import Stepper from '../shared/Stepper'
 import ListgroupContainer from '../shared/styled/ListgroupContainer'
@@ -32,10 +31,11 @@ export default props => {
                   <div className="desc">
                     The most basic level of advertisement
                   </div>
-                  <div className="count">
+                  <div className="count classic">
                     <Stepper
                       onChange={onClassicChange}
                       value={props.classicCount}
+                      className="stepper-classic"
                     />
                   </div>
                 </div>
@@ -47,7 +47,7 @@ export default props => {
                   <div className="desc">
                     Display a company logo and use a longer presentation text
                   </div>
-                  <div className="count">
+                  <div className="count standout">
                     <Stepper
                       onChange={onStandoutChange}
                       value={props.standoutCount}
@@ -63,7 +63,7 @@ export default props => {
                     Same benefits as Standout Ad, but also puts the ad at the
                     top of the results, allowing higher visibility
                   </div>
-                  <div className="count">
+                  <div className="count premium">
                     <Stepper
                       onChange={onPremiumChange}
                       value={props.premiumCount}

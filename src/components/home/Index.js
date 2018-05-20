@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,32 +9,30 @@ import Membership from './Membership'
 import Ads from './Ads'
 import Checkout from './Checkout'
 
-export class Index extends Component {
-  render() {
-    const steps = [
-      { name: 'Membership', component: <Membership {...this.props} /> },
-      { name: 'Ads', component: <Ads {...this.props} /> },
-      { name: 'Checkout', component: <Checkout {...this.props} /> }
-    ]
+export const Index = props => {
+  const steps = [
+    { name: 'Membership', component: <Membership {...props} /> },
+    { name: 'Ads', component: <Ads {...props} /> },
+    { name: 'Checkout', component: <Checkout {...props} /> }
+  ]
 
-    return (
-      <HomePageContainer>
-        <Grid>
-          <Row>
-            <Col sm={8} smOffset={2}>
-              <div className="step-progress">
-                <StepZilla
-                  steps={steps}
-                  startAtStep={0}
-                  stepsNavigation={false}
-                />
-              </div>
-            </Col>
-          </Row>
-        </Grid>
-      </HomePageContainer>
-    )
-  }
+  return (
+    <HomePageContainer>
+      <Grid>
+        <Row>
+          <Col sm={8} smOffset={2}>
+            <div className="step-progress">
+              <StepZilla
+                steps={steps}
+                startAtStep={0}
+                stepsNavigation={false}
+              />
+            </div>
+          </Col>
+        </Row>
+      </Grid>
+    </HomePageContainer>
+  )
 }
 
 const HomePageContainer = styled.div`

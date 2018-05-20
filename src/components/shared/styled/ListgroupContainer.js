@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export default styled.div`
@@ -25,5 +24,19 @@ export default styled.div`
   .list-group-item-text .count {
     width: 20%;
     display: inline-block;
+  }
+
+  .list-group-item-text .count.membership-name {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 650px) {
+    .list-group-item-text .desc {
+      width: 70%;
+    }
+
+    .list-group-item-text .count {
+      width: 30%;
+    }
   }
 `

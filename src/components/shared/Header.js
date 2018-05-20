@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
-import Logo from './Logo'
 
 export default () => {
   return (
@@ -11,9 +10,7 @@ export default () => {
       <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">
-              <Logo />
-            </Link>
+            <Link to="/">My Job Dashboard</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -47,7 +44,7 @@ const HeaderContainer = styled.div`
   }
 
   & .navbar-nav > li > a {
-    line-height: 40px;
+    padding: 25px 25px;
   }
 
   & .navbar-default {
@@ -69,7 +66,14 @@ const HeaderContainer = styled.div`
   }
 
   & .navbar-brand {
-    height: auto;
+    text-transform: uppercase;
+    color: #000 !important;
+  }
+
+  @media (min-width: 769px) {
+    & .navbar-brand {
+      padding: 25px 40px 25px 25px;
+    }
   }
 
   @media (max-width: 768px) {

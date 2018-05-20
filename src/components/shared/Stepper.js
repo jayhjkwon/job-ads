@@ -1,27 +1,30 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-export default class extends PureComponent {
-  onMinusClick = e => {
-    this.props.onChange(this.props.value >= 1 ? this.props.value - 1 : 0)
+export default props => {
+  const onMinusClick = e => {
+    props.onChange(getNextMinusValue(props.value))
   }
 
-  onPlusClick = e => {
-    this.props.onChange(this.props.value + 1)
+  const onPlusClick = e => {
+    props.onChange(props.value + 1)
   }
-  render() {
-    return (
-      <StepperContainer>
-        <span className="minus" onClick={this.onMinusClick}>
-          -
-        </span>
-        <span className="value">{this.props.value}</span>
-        <span className="plus" onClick={this.onPlusClick}>
-          +
-        </span>
-      </StepperContainer>
-    )
-  }
+  
+  return (
+    <StepperContainer className={props.className}>
+      <span className="minus" onClick={onMinusClick}>
+        -
+      </span>
+      <span className="value">{props.value}</span>
+      <span className="plus" onClick={onPlusClick}>
+        +
+      </span>
+    </StepperContainer>
+  )
+}
+
+export function getNextMinusValue(currentValue) {
+  return currentValue >= 1 ? currentValue - 1 : 0
 }
 
 const StepperContainer = styled.div`
@@ -33,16 +36,11 @@ const StepperContainer = styled.div`
     display: inline-block;
     padding: 0 5px;
     font-size: 2rem;
+    user-select: none;
   }
 
   .minus,
   .plus {
     cursor: pointer;
-  }
-
-  .value {
-  }
-
-  .plus {
   }
 `

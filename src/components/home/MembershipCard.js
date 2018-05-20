@@ -1,7 +1,6 @@
 import React from 'react'
-import { Panel, Row, Col } from 'react-bootstrap'
+import { Panel } from 'react-bootstrap'
 import styled from 'styled-components'
-import PageSubTitle from '../shared/styled/PageSubTitle'
 
 export default props => {
   const handleMembershipClick = e => {
@@ -13,7 +12,7 @@ export default props => {
       <Panel
         onClick={handleMembershipClick}
         bsStyle={
-          props.title.toLowerCase() === props.memberShipName
+          props.title.toLowerCase() === props.membershipName
             ? 'primary'
             : 'default'
         }
